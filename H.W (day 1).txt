@@ -1,0 +1,40 @@
+Task 1
+Do a write up for the followings:
+
+oo) Difference between HTTP1.1 vs HTTP2
+==> HTTP1.1 makes loading a web page more resource-intensive. 
+Practices like concatenation, data inlining, and domain sharding in an attempt to fix the underlying problems of the protocol.
+
+
+HTTP2 is binary, instead of textual
+HTTP2 is fully multiplexed, instead of ordered and blocking
+HTTP2 can, therefore, use one connection for parallelism
+HTP2 uses header compression to reduce overhead
+HTTP2 allows servers to “push” responses proactively into client caches
+
+oo) HTTP version history
+==>  
+
+	1991	0.9
+	1996	1.0
+	1997	1.1
+	2015	2.0
+Draft  (2020)	3.0
+
+oo) List 5 differences between Browser JS vs Node Js.
+==> in Node.js 					Browser jsthing
+	-building a Node.js application.		-Building apps that run in the browser is a completely different thing
+	-you control the environment			-you don’t get the luxury to choose what browser your visitors will use
+	-CommonJS module system				-ES Modules standard being implemented.
+	  require()					-import
+							we don’t have all the nice APIs that Node.js
+
+oo) what happens when you type a URL in the address bar in the browser?
+==>
+You enter a URL into a web browser
+The browser looks up the IP address for the domain name via DNS
+The browser sends a HTTP request to the server
+The server sends back a HTTP response
+The browser begins rendering the HTML
+The browser sends requests for additional objects embedded in HTML (images, css, JavaScript) and repeats steps 3-5.
+Once the page is loaded, the browser sends further async requests as needed.

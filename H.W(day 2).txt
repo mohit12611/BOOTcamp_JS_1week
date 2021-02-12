@@ -1,0 +1,89 @@
+Q) html and script.js file and run a for loop on the data and print all the country names in the console.
+Q) Extract and print the total population of all the countries in the console. use the html template. https://restcountries.eu/rest/v2/all 
+
+Q)  Write a write up on Difference between copy by value and copy by reference.
+==>  
+     *** Copy by value:
+	-This usually applies to primitive data types (i.e. number, boolean and string).
+	-When we make a copy of a value stored in a variable, you create a new variable with the same value.
+
+     *** Copy by reference:
+	-This usually applies to composite data types (i.e. array, object and function).
+	- if ywe use the assignment operator for a reference value, it will NOT copy the value. 
+	  Instead, both variables will reference the same object in the memory
+
+
+
+ 
+Q)  How to copy by value a composite data type (array+objects).
+==>  To perform copy by value on composite data type we can use Concept called "spread operator" (...).
+    **** ARRAYS--->
+	eg. array1 = [1,2,3,4];
+	---------------------------to copy array1 by value following can be done;    
+	>>  array2 = [...array1];
+
+    **** OBJECTS--->
+	eg. 
+	1) using spread ...  (----shallow copy --- shallow copy means that some values are still connected to the original variable)
+	let p1 = {...person};
+
+	2) using  Object.assign() method (----shallow copy)
+	let p2 = Object.assign({}, person);
+
+	3) using JSON  (----deep copy --- A deep copying means that value of the new variable is disconnected from the original variable)
+	let p3 = JSON.parse(JSON.stringify(person));
+
+eg.----------------> Shallow copy -- Object.assign()
+
+let person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    address: {
+        street: 'North 1st street',
+        city: 'San Jose',
+        state: 'CA',
+        country: 'USA'
+    }
+};
+
+
+let copiedPerson = Object.assign({}, person);
+
+copiedPerson.firstName = 'Jane'; // disconnected
+
+copiedPerson.address.street = 'Amphitheatre Parkway';          // connected
+copiedPerson.address.city = 'Mountain View';         // connected
+
+console.log(copiedPerson);
+console.log(person);
+
+OUTPUT :::
+
+///// copiedPerson
+{
+    firstName: 'Jane',
+    lastName: 'Doe',
+    address: {
+        street: 'Amphitheatre Parkway',
+        city: 'Mountain View',
+        state: 'CA',
+        country: 'USA'
+    }
+}
+
+///// person
+{
+    firstName: 'John',
+    lastName: 'Doe',
+    address: {
+        street: 'Amphitheatre Parkway',
+        city: 'Mountain View',
+        state: 'CA',
+        country: 'USA'
+    }
+}
+
+
+Q4) JSON task https://medium.com/@reach2arunprakash/guvi-zen-code-sprint-javascript-practice-problems-in-json-objects-and-list-49ac3356a8a55.
+==>  Its in folder.
+
